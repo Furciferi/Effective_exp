@@ -1,0 +1,35 @@
+---
+  archive_path: "/lustre/scratch/astro/xcs/XMM_observations/data"
+  images_path: "{obsid}/images/"
+  expmap_images:
+    PN: "{obsid}_pn_exp1-0.50-2.00keVexpmap.fits"
+    MOS1: "{obsid}_mos1_exp1-0.50-2.00keVexpmap.fits"
+    MOS2 : "{obsid}_mos2_exp1-0.50-2.00keVexpmap.fits"
+
+  expmap_keys:
+    RA_xmm: "RA_PNT"
+    DEC_xmm: "DEC_PNT"
+
+  effective_radius: 5 # Radius of expmap cutout for mean/meadian/percentile
+  percentile_level: 5 # level which to cut above 0 for percentile check
+
+  XMM_obs: "XMM_obs.csv"
+
+  infile_keys:
+    ra: RA
+    dec: DEC
+    _id: MEM_MATCH_ID
+    r_lam: R_LAMBDA
+    redshift: Z
+    obsid: OBSID
+
+
+  cosmology:
+    FlatLambdaCDM:
+      H0: 70
+      Om0: 0.3
+      #args:
+        # Tcmb0:
+        # Neff:
+        # m_nu:
+      # Can submit key:value pairs here following https://docs.astropy.org/en/stable/api/astropy.cosmology.FlatLambdaCDM.html
